@@ -1,0 +1,51 @@
+server:
+    port: 9001
+regCenter:
+  serverList: 127.0.0.1:2181
+  namespace: zookeeper
+
+live:
+  callback:
+    cron: 0/3 * * * * ?
+    shardingTotalCount: 1
+    shardingItemParameters: 0=cd
+  callbackfail:
+    cron: 0/9 * * * * ?
+    shardingTotalCount: 1
+    shardingItemParameters: 0=cd
+  state:
+    cron: 0/6 * * * * ?
+    shardingTotalCount: 1
+    shardingItemParameters: 0=cd
+
+spring:
+  rabbitmq:
+      host: ****************
+      username: ****************
+      password: ****************
+
+  redis:
+      cluster:
+        nodes:
+          - ****************
+          - ****************
+          - ****************
+          - ****************
+          - ****************
+          - ****************
+      pool:
+        max-idle: 100
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+  datasource:
+    url : ****************
+    username : ****************
+    password : ****************
+    driverClassName : com.mysql.jdbc.Driver
+  profiles:
+    active: dev
+
+
+
+
